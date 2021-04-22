@@ -39,8 +39,6 @@ function greetFactoryFunction(){
         }if (language === "xitsonga"){
             greetXitsonga;
             theCounter++;
-        }else if(userInput = ""){
-            return "this"
         }
         names[userInput.value] = 1;
     }
@@ -52,7 +50,7 @@ function greetFactoryFunction(){
                 theNameObject[userInput] = 1;       
             } else if (theNameObject.hasOwnProperty(userInput)){
                 return "This name already exists!";
-            }if (theNameObject[userInput] === ""){
+            }if (userInput === ""){
                 return "Nothing to add!"
             }
             theNameObject[userInput] = 1;

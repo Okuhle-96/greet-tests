@@ -46,10 +46,6 @@ describe ("Greeting Exercise Factory Function", function(){
             assert.equal('Ahee, ',testingGreet.greetXitsonga());
         })
 
-        it('Should ask a user to select a language when its not selected', function(){
-            let testingGreet = greetFactoryFunction();
-            assert.equal('Please select your language!',testingGreet.setLanguage());
-        })
     })
 
     describe ("Should be able to count names greeted", function(){
@@ -104,19 +100,16 @@ describe ("Greeting Exercise Factory Function", function(){
 
             assert.equal(0,testingGreet.getCounter());
         })
+       
 
     }) 
 
     describe ("Should be able to return errors", function(){
-        it('Should be able to tell the user to set a its name when there is no input', function(){
-            let testingGreet = greetFactoryFunction();
-
-            testingGreet.setName("");
-
-            testingGreet.getName();
-
-            assert.equal("Please enter your name!", testingGreet.setErrorMessages());
-        })
+      
+           it('Should ask a user to select a language when its not selected', function(){
+                let testingGreet = greetFactoryFunction();
+                assert.equal('Please select your language!',testingGreet.setLanguage());
+            })
 
         it('Should be able to tell a user if the name has been greeted', function(){
             let testingGreet = greetFactoryFunction();
@@ -124,20 +117,9 @@ describe ("Greeting Exercise Factory Function", function(){
             testingGreet.setName("Okuhle");
             testingGreet.setName("Okuhle");
 
-            testingGreet.getName();
+            testingGreet.setCounter();
 
-            assert.equal("This name already exists!", testingGreet.setErrorMessages());
-        })
-
-        it('Should ask a user to enter a valid name when the user inputs characters or numbers', function(){
-            let testingGreet = greetFactoryFunction();
-
-            testingGreet.setName("!@#$%^&*");
-            testingGreet.setName("845121");
-
-            testingGreet.getName();
-
-            assert.equal("Please enter a valid name!", testingGreet.setErrorMessages());
+            assert.equal("This name already exists!", testingGreet.setCounter());
         })
 
 
